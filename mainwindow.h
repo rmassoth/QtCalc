@@ -40,11 +40,19 @@ private slots:
 
     void on_decimalButton_clicked();
 
+    void on_addButton_clicked();
+
+    void on_subtractButton_clicked();
+
+    void on_multiplyButton_clicked();
+
+    void on_divideButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     double input1, input2, currentInput, answer;
     bool decimal;
-    QString inputString;
+    QString inputString, function;
 };
 
 #endif // MAINWINDOW_H

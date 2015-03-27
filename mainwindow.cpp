@@ -20,14 +20,8 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_button1_clicked()
 {
-    if(decimal){
-        currentInput += .1;
-        inputString = QString::number(currentInput);
-        ui->numberView->display(inputString);
-    }else{
-        currentInput = currentInput * 10;
-        currentInput += 1;
-        inputString = QString::number(currentInput);
+    if(inputString.length() < 10){
+        inputString += "1";
         ui->numberView->display(inputString);
     }
 
@@ -35,83 +29,127 @@ void MainWindow::on_button1_clicked()
 
 void MainWindow::on_button2_clicked()
 {
-    currentInput = currentInput * 10;
-    currentInput += 2;
-    inputString = QString::number(currentInput);
-    ui->numberView->display(inputString);
+    if(inputString.length() < 10){
+        inputString += "2";
+        ui->numberView->display(inputString);
+    }
 }
 
 void MainWindow::on_button3_clicked()
 {
-    currentInput = currentInput * 10;
-    currentInput += 3;
-    inputString = QString::number(currentInput);
-    ui->numberView->display(inputString);
+    if(inputString.length() < 10){
+        inputString += "3";
+        ui->numberView->display(inputString);
+    }
 }
 
 void MainWindow::on_button4_clicked()
 {
-    currentInput = currentInput * 10;
-    currentInput += 4;
-    inputString = QString::number(currentInput);
-    ui->numberView->display(inputString);
+    if(inputString.length() < 10){
+        inputString += "4";
+        ui->numberView->display(inputString);
+    }
 }
 
 void MainWindow::on_button5_clicked()
 {
-    currentInput = currentInput * 10;
-    currentInput += 5;
-    inputString = QString::number(currentInput);
-    ui->numberView->display(inputString);
+    if(inputString.length() < 10){
+        inputString += "5";
+        ui->numberView->display(inputString);
+    }
 }
 
 void MainWindow::on_button6_clicked()
 {
-    currentInput = currentInput * 10;
-    currentInput += 6;
-    inputString = QString::number(currentInput);
-    ui->numberView->display(inputString);
+    if(inputString.length() < 10){
+        inputString += "6";
+        ui->numberView->display(inputString);
+    }
 }
 
 void MainWindow::on_button7_clicked()
 {
-    currentInput = currentInput * 10;
-    currentInput += 7;
-    inputString = QString::number(currentInput);
-    ui->numberView->display(inputString);
+    if(inputString.length() < 10){
+        inputString += "7";
+        ui->numberView->display(inputString);
+    }
 }
 
 void MainWindow::on_button8_clicked()
 {
-    currentInput = currentInput * 10;
-    currentInput += 8;
-    inputString = QString::number(currentInput);
-    ui->numberView->display(inputString);
+    if(inputString.length() < 10){
+        inputString += "8";
+        ui->numberView->display(inputString);
+    }
 }
 
 void MainWindow::on_button9_clicked()
 {
-    currentInput = currentInput * 10;
-    currentInput += 9;
-    inputString = QString::number(currentInput);
-    ui->numberView->display(inputString);
+    if(inputString.length() < 10){
+        inputString += "9";
+        ui->numberView->display(inputString);
+    }
 }
 
 void MainWindow::on_button0_clicked()
 {
-    currentInput = currentInput * 10;
-    inputString = QString::number(currentInput);
-    ui->numberView->display(inputString);
+    if(inputString.length() < 10){
+        inputString += "0";
+        ui->numberView->display(inputString);
+    }
 }
 
 void MainWindow::on_decimalButton_clicked()
 {
-    currentInput += .0;
-    inputString = QString::number(currentInput);
-    ui->numberView->display(inputString);
+    if(inputString.length() < 10){
+        inputString += ".";
+        ui->numberView->display(inputString);
+    }
 }
 
 void MainWindow::on_enterButton_clicked()
 {
+    input2 = inputString.toDouble();
+    if(function == "add"){
+        answer = input1 + input2;
+    }else if(function == "subtract"){
+        answer = input1 - input2;
+    }else if(function == "multiply"){
+        answer = input1 * input2;
+    }else if(function == "divide"){
+        answer = input1 / input2;
+    }
 
+    inputString = QString::number(answer);
+    ui->numberView->display(inputString);
+    inputString = "";
+
+}
+
+void MainWindow::on_addButton_clicked()
+{
+    input1 = inputString.toDouble();
+    function = "add";
+    inputString = "";
+}
+
+void MainWindow::on_subtractButton_clicked()
+{
+    input1 = inputString.toDouble();
+    function = "subtract";
+    inputString = "";
+}
+
+void MainWindow::on_multiplyButton_clicked()
+{
+    input1 = inputString.toDouble();
+    function = "multiply";
+    inputString = "";
+}
+
+void MainWindow::on_divideButton_clicked()
+{
+    input1 = inputString.toDouble();
+    function = "divide";
+    inputString = "";
 }
