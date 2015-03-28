@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <string>
+#include "aboutdialog.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent), ui(new Ui::MainWindow)
@@ -181,4 +182,10 @@ void MainWindow::on_clearAllButton_clicked()
 void MainWindow::on_actionQuit_triggered()
 {
     this->close();
+}
+
+void MainWindow::on_actionABout_triggered()
+{
+    AboutDialog *about = new AboutDialog();
+    about->show();
 }

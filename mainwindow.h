@@ -52,6 +52,8 @@ private slots:
 
     void on_actionQuit_triggered();
 
+    void on_actionABout_triggered();
+
 private:
     Ui::MainWindow *ui;
     double input1, input2, currentInput, answer;
