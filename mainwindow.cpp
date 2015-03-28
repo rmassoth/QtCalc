@@ -18,6 +18,16 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::resetVariables(){
+    inputString = "";
+    decimal = false;
+    input1 = 0;
+    input2 = 0;
+    function = "";
+    currentInput = 0;
+    answer = 0;
+}
+
 void MainWindow::on_button1_clicked()
 {
     if(inputString.length() < 10){
@@ -101,9 +111,12 @@ void MainWindow::on_button0_clicked()
 
 void MainWindow::on_decimalButton_clicked()
 {
-    if(inputString.length() < 10){
-        inputString += ".";
-        ui->numberView->display(inputString);
+    if(!decimal){
+        if(inputString.length() < 10){
+            inputString += ".";
+            ui->numberView->display(inputString);
+            decimal = true;
+        }
     }
 }
 
@@ -122,7 +135,8 @@ void MainWindow::on_enterButton_clicked()
 
     inputString = QString::number(answer);
     ui->numberView->display(inputString);
-    inputString = "";
+    resetVariables();
+
 
 }
 
@@ -131,6 +145,7 @@ void MainWindow::on_addButton_clicked()
     input1 = inputString.toDouble();
     function = "add";
     inputString = "";
+    decimal = false;
 }
 
 void MainWindow::on_subtractButton_clicked()
@@ -138,6 +153,7 @@ void MainWindow::on_subtractButton_clicked()
     input1 = inputString.toDouble();
     function = "subtract";
     inputString = "";
+    decimal = false;
 }
 
 void MainWindow::on_multiplyButton_clicked()
@@ -145,6 +161,7 @@ void MainWindow::on_multiplyButton_clicked()
     input1 = inputString.toDouble();
     function = "multiply";
     inputString = "";
+    decimal = false;
 }
 
 void MainWindow::on_divideButton_clicked()
@@ -152,4 +169,5 @@ void MainWindow::on_divideButton_clicked()
     input1 = inputString.toDouble();
     function = "divide";
     inputString = "";
+    decimal = false;
 }

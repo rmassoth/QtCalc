@@ -48,6 +48,8 @@ private slots:
 
     void on_divideButton_clicked();
 
+    void resetVariables();
+
 private:
     Ui::MainWindow *ui;
     double input1, input2, currentInput, answer;
