@@ -171,3 +171,14 @@ void MainWindow::on_divideButton_clicked()
     inputString = "";
     decimal = false;
 }
+
+void MainWindow::on_clearAllButton_clicked()
+{
+    resetVariables();
+    ui->numberView->display("0");
+}
+
+void MainWindow::on_actionQuit_triggered()
+{
+    this->close();
+}

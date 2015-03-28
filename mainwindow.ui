@@ -51,7 +51,7 @@
      <rect>
       <x>20</x>
       <y>70</y>
-      <width>101</width>
+      <width>51</width>
       <height>50</height>
      </rect>
     </property>
@@ -165,7 +165,7 @@
    <widget class="QPushButton" name="subtractButton">
     <property name="geometry">
      <rect>
-      <x>169</x>
+      <x>120</x>
       <y>70</y>
       <width>51</width>
       <height>50</height>
@@ -245,7 +245,7 @@
    <widget class="QPushButton" name="multiplyButton">
     <property name="geometry">
      <rect>
-      <x>120</x>
+      <x>70</x>
       <y>70</y>
       <width>51</width>
       <height>50</height>
@@ -272,6 +272,19 @@
     </property>
     <property name="text">
      <string>8</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="clearAllButton">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>70</y>
+      <width>51</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>AC</string>
     </property>
    </widget>
   </widget>

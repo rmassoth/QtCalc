@@ -48,13 +48,16 @@ private slots:
 
     void on_divideButton_clicked();
 
-    void resetVariables();
+    void on_clearAllButton_clicked();
+
+    void on_actionQuit_triggered();
 
 private:
     Ui::MainWindow *ui;
     double input1, input2, currentInput, answer;
     bool decimal;
     QString inputString, function;
+    void resetVariables();
 };
 
 #endif // MAINWINDOW_H
